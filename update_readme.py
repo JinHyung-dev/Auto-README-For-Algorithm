@@ -106,7 +106,7 @@ try:
 except FileNotFoundError:
     original_content = ""
 
-user_repo = "JinHyung-dev/Algorithm"
+user_repo = os.getenv('GITHUB_REPOSITORY')
 
 # 데이터 가져오기
 sites, difficulties, problems, commit_times, links = get_data(user_repo)
