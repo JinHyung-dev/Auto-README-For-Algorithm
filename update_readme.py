@@ -15,10 +15,15 @@ def get_kst_time(commit_time):
 
 # GitHub API 응답에서 파일 목록을 처리하는 코드
 def get_data(user_repo):
+    token = os.getenv('GITHUB_TOKEN')  # GITHUB_TOKEN 환경 변수에서 토큰을 가져옵니다.
+    headers = {
+        'Authorization': f'token {token}'  # 헤더에 GITHUB_TOKEN을 포함시켜 인증
+    }
+    
     # GitHub API를 사용하여 파일 목록 가져오기
     url = f"https://api.github.com/repos/{user_repo}/git/trees/main?recursive=1"
-    response = requests.get(url)
-    response_data = [item for item in response.json()['tree'] if item['type'] == 'blob' and not item['path'].startswith('.')]
+    response = requests.get(url, headers=headers)
+    response_data = [item for item in response.json().get('tree', []) if item['type'] == 'blob' and not item['path'].startswith('.')]
 
     sites = []
     difficulties = []
@@ -47,15 +52,20 @@ def get_data(user_repo):
 
             # 각 파일의 마지막 커밋 시간 가져오기
             file_url = f"https://api.github.com/repos/{user_repo}/commits?path={item['path']}"
-            commit_response = requests.get(file_url)
+            commit_response = requests.get(file_url, headers=headers)
             commit_data = commit_response.json()
-            if commit_data:
-                commit_time = commit_data[0]['commit']['committer']['date']
-                commit_times.append(get_kst_time(commit_time))
-            else:
-                commit_times.append(current_time)  # 커밋이 없으면 현재 시간 사용
 
-             # README.md 링크만 추출
+            if commit_data:
+                commit_time = commit_data[0].get('commit', {}).get('committer', {}).get('date', None)
+                if commit_time:
+                    commit_times.append(get_kst_time(commit_time))
+                else:
+                    # 커밋 시간 정보가 없는 경우, 기본 시간을 사용
+                    commit_times.append("Unknown time")
+            else:
+                commit_times.append("No commits found")  # 커밋이 아예 없는 경우
+
+            # README.md 링크만 추출
             if "README.md" in item['path']:
                 links.append(f"https://github.com/{user_repo}/blob/main/{item['path']}")
             else:
