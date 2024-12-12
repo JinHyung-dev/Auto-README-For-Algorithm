@@ -3,15 +3,15 @@ Automatically write README.md for Algorithm study
 <br><br>
 
 ## 📔 목차
-1. [개요](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#-%EA%B0%9C%EC%9A%94)
-    1) [소개](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#%EC%86%8C%EA%B0%9C)
-    2) [프로젝트 배경](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%EA%B2%BD)
-    3) [라이센스](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4)
-2. [작동 예시](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#-%EC%9E%91%EB%8F%99-%EC%98%88%EC%8B%9C)
-3. [사용 방법](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95%ED%83%9D-1)
-    1) [템플릿으로 생성](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#1-%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9C%BC%EB%A1%9C-%EC%8B%A0%EA%B7%9C-%EB%A0%88%ED%8F%AC%EC%A7%80%ED%86%A0%EB%A6%AC-%EC%83%9D%EC%84%B1%ED%95%98%EC%97%AC-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0)
-    2) [기존 레포에 적용](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#2-%EA%B8%B0%EC%A1%B4-%EB%A0%88%ED%8F%AC%EC%A7%80%ED%86%A0%EB%A6%AC%EC%97%90-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0)
-4. [커스텀](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/edit/main/README.md#-%EC%BB%A4%EC%8A%A4%ED%85%80)
+1. [개요](#-개요)
+    1) [소개](#소개)
+    2) [프로젝트 배경](#제작-배경)
+    3) [라이센스](#라이센스)
+2. [작동 예시](#-작동예시)
+3. [사용 방법](#-사용-방법택-1)
+    1) [템플릿으로 생성](#1-템플릿으로-신규-레포지토리-생성하여-이용하기)
+    2) [기존 레포에 적용](#2-기존-레포지토리에-적용하기)
+4. [커스텀](#-커스텀)
 <br><br>
 
 ## 📌 개요
