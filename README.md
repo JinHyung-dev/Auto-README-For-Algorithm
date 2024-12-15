@@ -59,6 +59,7 @@ GitHub Actions와 Python을 사용하여 알고리즘 문제 풀이의 README.md
 ### 1) 템플릿으로 신규 레포지토리 생성하여 이용하기
 1. 오른쪽 상단의 "Use this template" 버튼을 클릭하여 새로운 레포지토리를 생성
   - 프로젝트 이름과 설명을 입력한 후, "Create repository from template" 버튼을 클릭
+  - ❗Initial commit X라고 뭔가 실패했다는 표시가 뜰텐데 레포지토리 생성시 기본 설정값인 Workflow permissions가 read만 허용되어 있어서 그렇습니다. 무시하고 아래 진행하면 해결됩니다!
 2. 해당 레포지토리의 GitAction 활성화
   - 레포지토리 - Settings - Actions(General) 메뉴로 이동
   - Actions permissions 항목을 **Allow all actions and reusable workflows**로 변경
