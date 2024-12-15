@@ -123,10 +123,30 @@ try:
 except FileNotFoundError:
     original_content = ""
 
+start_tag = "<!-- TEMPLATE_START -->"
+end_tag = "<!-- TEMPLATE_END -->"
 user_repo = os.getenv('GITHUB_REPOSITORY')
 
 # 데이터 가져오기
 sites, difficulties, problems, commit_times, links = get_data(user_repo)
+
+# 최초 실행 여부 확인
+if "<!-- INIT_DONE -->" not in original_content:
+    print("README 초기 설정 중...")
+    
+    if start_tag in original_content and end_tag in original_content:
+        start_index = original_content.find(start_tag)
+        end_index = original_content.find(end_tag) + len(end_tag)
+        original_content = original_content[:start_index] + original_content[end_index:]
+
+    # 최초 실행 완료 태그 추가
+    updated_content += "\n\n<!-- INIT_DONE -->"
+
+    # 업데이트된 내용을 README 파일에 저장
+    with open("README.md", "w") as file:
+        file.write(updated_content)
+else:
+    print("README 초기 설정 이미 완료됨.")
 
 # 리드미 업데이트
 updated_content = update_readme(user_repo, sites, difficulties, problems, commit_times, links, original_content)
