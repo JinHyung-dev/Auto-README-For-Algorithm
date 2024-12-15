@@ -7,11 +7,12 @@ Automatically write README.md for Algorithm study
     1) [소개](#소개)
     2) [프로젝트 배경](#제작-배경)
     3) [라이센스](#라이센스)
-2. [작동 예시](#-작동예시)
-3. [사용 방법](#-사용-방법택-1)
+2. [작동 예시](#-작동-예시)
+3. [사용 전 체크리스트](#-사용-전-체크리스트)
+4. [사용 방법](#-사용-방법택-1)
     1) [템플릿으로 생성](#1-템플릿으로-신규-레포지토리-생성하여-이용하기)
     2) [기존 레포에 적용](#2-기존-레포지토리에-적용하기)
-4. [커스텀](#-커스텀)
+5. [커스텀](#-커스텀)
 <br><br>
 
 ## 📌 개요
@@ -26,7 +27,6 @@ GitHub Actions와 Python을 사용하여 알고리즘 문제 풀이의 README.md
 이 템플릿 레포지토리는 **MIT License** 하에 공개됩니다. 아래 내용을 참고하여 사용해 주세요.
 - This project is developed by [JinHyung-dev](https://github.com/JinHyung-dev).
 - You can freely use and modify this project under the terms of the [MIT License](https://github.com/JinHyung-dev/Auto-README-For-Algorithm/blob/main/LICENSE).
-
 <br><br>
 
 ## 💬 작동 예시
@@ -43,6 +43,14 @@ GitHub Actions와 Python을 사용하여 알고리즘 문제 풀이의 README.md
   | --- | --- | --- | --- | --- |
   | 백준 | Bronze | 10817. 세 수 | 2024-11-02 13:04 | [링크](https://github.com/JinHyung-dev/Algorithm/blob/main/백준/Bronze/10817. 세 수/README.md) |
 👉 예시 [Repository](https://github.com/JinHyung-dev/Algorithm/blob/main/README.md) 보러 가기
+<br><br>
+
+## 👉 사용 전 체크리스트
+1. Private 레포지토리로 사용하실 건가요?
+ - 네: GITHUB_TOKEN 환경 변수가 필요합니다. 깃 허브 토큰을 생성한 적이 없으면 "PermissionError: Private 레포지토리에서 실행하려면 GITHUB_TOKEN이 필요합니다."라는 에러 메시지가 뜹니다. 이 경우 Public 레포지토리로 사용하거나 GITHUB_TOKEN을 설정하세요.
+ - 아니요: 토큰이 없어도 정상 작동합니다. Public 레포지토리에서는 추가 설정 없이 바로 사용할 수 있습니다.
+2. GITHUB_TOKEN 설정 방법
+ - GitHub Settings > Developer settings > Personal access tokens에서 토큰을 생성하세요.
 <br><br>
 
 ## ✅ 사용 방법(택 1)
