@@ -1,7 +1,9 @@
 # Auto-README-For-Algorithm
-Automatically write README.md for Algorithm study
+Automatically write README.md for Algorithm study by [JinHyung-dev](https://github.com/JinHyung-dev/Auto-README-For-Algorithm)
 <br><br>
 
+<!-- TEMPLATE_START -->
+<!-- 이 섹션은 템플릿 생성 이후 자동으로 삭제됩니다.-->
 ## 📔 목차
 1. [개요](#-개요)
     1) [소개](#소개)
@@ -106,3 +108,4 @@ GitHub Actions와 Python을 사용하여 알고리즘 문제 풀이의 README.md
     else:
         links.append(f"https://github.com/{user_repo}/blob/main/{item['path']}")  # 다른 파일이 있다면 그대로 추가
     ```
+<!-- TEMPLATE_END -->
