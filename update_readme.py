@@ -141,7 +141,7 @@ if "<!-- INIT_DONE -->" not in original_content:
         original_content = original_content[:start_index] + original_content[end_index:]
 
     # 최초 실행 완료 태그 추가
-    original_content += "\n\n<!-- INIT_DONE -->"
+    original_content += "\n<!-- INIT_DONE -->\n\n"
 
     # 업데이트된 내용을 README 파일에 저장
     with open("README.md", "w") as file:
