@@ -71,7 +71,7 @@ GitHub Actions와 Python을 사용하여 알고리즘 문제 풀이의 README.md
 ### 2) 기존 레포지토리에 적용하기
 > "## 📑List📑" 섹션 이후 내용만 찾아서 변경되도록 설정되어있으므로 기존에 작성되어있는 README.md 내용은 변경되지 않습니다.
 
-> 풀이사이트-난이도-문제명 순이어야 그대로 사용 가능합니다. 그외 커스텀 내용 참조
+> 🚨 레포지토리 폴더 구조가 풀이사이트-난이도-문제명 순이어야 그대로 사용 가능합니다. 그외 커스텀 내용 참조하여 수정해야할 수 있습니다.
 1. 자동 README를 적용할 레포지토리의 GitAction 활성화
   - 레포지토리 - Settings - Actions(General) 메뉴로 이동
   - Actions permissions 항목을 **Allow all actions and reusable workflows**로 체크
