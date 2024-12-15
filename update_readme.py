@@ -133,18 +133,19 @@ sites, difficulties, problems, commit_times, links = get_data(user_repo)
 # 최초 실행 여부 확인
 if "<!-- INIT_DONE -->" not in original_content:
     print("README 초기 설정 중...")
-    
+
+    # 설명 삭제
     if start_tag in original_content and end_tag in original_content:
         start_index = original_content.find(start_tag)
         end_index = original_content.find(end_tag) + len(end_tag)
         original_content = original_content[:start_index] + original_content[end_index:]
 
     # 최초 실행 완료 태그 추가
-    updated_content += "\n\n<!-- INIT_DONE -->"
+    original_content += "\n\n<!-- INIT_DONE -->"
 
     # 업데이트된 내용을 README 파일에 저장
     with open("README.md", "w") as file:
-        file.write(updated_content)
+        file.write(original_content)
 else:
     print("README 초기 설정 이미 완료됨.")
 
