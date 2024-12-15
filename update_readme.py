@@ -21,6 +21,10 @@ def get_data(user_repo):
     # private 레포일 때만 Authorization 헤더 추가
     if token:
         headers = {'Authorization': f'token {token}'}
+    else:
+        print("Warning: GITHUB_TOKEN이 설정되지 않았습니다. Public 레포지토리에서만 작동합니다.")
+        if not is_public_repo(user_repo):
+            raise PermissionError("Private 레포지토리에서 실행하려면 GITHUB_TOKEN이 필요합니다.")
     
     # GitHub API를 사용하여 파일 목록 가져오기
     url = f"https://api.github.com/repos/{user_repo}/git/trees/main?recursive=1"
