@@ -16,9 +16,11 @@ def get_kst_time(commit_time):
 # GitHub API 응답에서 파일 목록을 처리하는 코드
 def get_data(user_repo):
     token = os.getenv('GITHUB_TOKEN')  # GITHUB_TOKEN 환경 변수에서 토큰을 가져옵니다.
-    headers = {
-        'Authorization': f'token {token}'  # 헤더에 GITHUB_TOKEN을 포함시켜 인증
-    }
+    headers = {}
+    
+    # private 레포일 때만 Authorization 헤더 추가
+    if token:
+        headers = {'Authorization': f'token {token}'}
     
     # GitHub API를 사용하여 파일 목록 가져오기
     url = f"https://api.github.com/repos/{user_repo}/git/trees/main?recursive=1"
