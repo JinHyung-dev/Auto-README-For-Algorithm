@@ -84,9 +84,9 @@ def update_readme(repo, sites, difficulties, problems, commit_times, links, orig
     # "## 📑List📑" 섹션 찾기
     start_index = original_content.find("## 📑List📑")
     if start_index != -1:
-        # "## 📑List📑" 이후 내용을 삭제
+        # "## 📑List📑 이후의 모든 내용 삭제"
         end_index = original_content.find("\n", start_index + 1)
-        original_content = original_content[:start_index] + original_content[end_index:]
+        original_content = original_content[:start_index]  # 제목도 함께 삭제
 
     # 새로운 테이블 생성
     new_table = "## 📑List📑\n\n"
@@ -115,6 +115,7 @@ def update_readme(repo, sites, difficulties, problems, commit_times, links, orig
     # 기존 내용에 새로 정렬된 표를 추가
     updated_content = original_content + sorted_new_table
     return updated_content
+
 
 # 기존 README.md 내용 읽기
 try:
