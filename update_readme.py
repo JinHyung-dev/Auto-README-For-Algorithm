@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 import pytz
 import requests
+import urllib.parse
 
 # 한국 시간대 설정
 KST = pytz.timezone('Asia/Seoul')
@@ -71,11 +72,15 @@ def get_data(user_repo):
             else:
                 commit_times.append("No commits found")  # 커밋이 아예 없는 경우
 
-            # README.md 링크만 추출
+           # 문제별 README.md 링크 추출
             if "README.md" in item['path']:
-                links.append(f"https://github.com/{user_repo}/blob/main/{item['path']}")
+                # url 인코딩
+                encoded_path = urllib.parse.quote(item['path'])
+                links.append(f"https://github.com/{user_repo}/blob/main/{encoded_path}")
             else:
-                links.append(f"https://github.com/{user_repo}/blob/main/{item['path']}")  # 다른 파일이 있다면 그대로 추가
+                # 다른 파일이 있다면 그대로 추가
+                encoded_path = urllib.parse.quote(item['path'])
+                links.append(f"https://github.com/{user_repo}/blob/main/{encoded_path}")
 
     return sites, difficulties, problems, commit_times, links
 
